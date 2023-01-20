@@ -1,0 +1,35 @@
+Started by user [8mha:////4EXkQ6qqzT+fL2QUJPXr2Xud2S+uB1bBWZ+2FO1jXp4MAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy2EgYe/dLi1CL9stSUxLwSALPvU/zBAAAA[0mvedant
+Running as SYSTEM
+Building in workspace /srv/assignment/deploy-application-httpd
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+The recommended git tool is: NONE
+using credential private-repos
+Cloning the remote Git repository
+Cloning repository https://github.com/Lucifer7669/Folio.git
+ > git init /srv/assignment/deploy-application-httpd # timeout=10
+Fetching upstream changes from https://github.com/Lucifer7669/Folio.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.38.1'
+using GIT_ASKPASS to set credentials private-repos-token-password
+ > git fetch --tags --force --progress -- https://github.com/Lucifer7669/Folio.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/Lucifer7669/Folio.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/deployment^{commit} # timeout=10
+Checking out Revision 192e9262672ed463a88a7f717740f981239508b5 (refs/remotes/origin/deployment)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 192e9262672ed463a88a7f717740f981239508b5 # timeout=10
+Commit message: "dist file"
+ > git rev-list --no-walk 192e9262672ed463a88a7f717740f981239508b5 # timeout=10
+[deploy-application-httpd] $ /bin/sh -xe /mnt/server/apache-tomcat-9.0.71/temp/jenkins129111467076495683.sh
++ yum install httpd -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Package httpd-2.4.54-1.amzn2.x86_64 already installed and latest version
+Nothing to do
++ cd /srv/assignment/deploy-application-httpd/dist/Folio
++ rm -rf 3rdpartylicenses.txt
++ cp -r assets favicon.ico index.html main.9b841075653c4c681930.js new.c09d53a4c84502ffeb31.jpg polyfills.5b80e4f6ca4d829d8885.js runtime.5ffdfd747891d5cac3ce.js styles.a2eb2dc83efe1d66e38b.css /var/www/html
++ systemctl start httpd
+Finished: SUCCESS
